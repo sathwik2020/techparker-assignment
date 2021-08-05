@@ -1,0 +1,15 @@
+<div id="container">
+  <header>Filmstrip View</header>
+  <div id="main" role="main">
+    <app-image-detail-view [template]="activeTemplate"></app-image-detail-view>
+
+    <app-thumbnail-list
+      [templates]="templates"
+      (onActiveTemplateChangeEvent)="setActiveTemplate($event)"
+      [activeTemplate]="activeTemplate"
+    ></app-thumbnail-list>
+  </div>
+  <footer>
+    <a href="instructions.pdf">Download PDF Instructions</a>
+  </footer>
+</div>

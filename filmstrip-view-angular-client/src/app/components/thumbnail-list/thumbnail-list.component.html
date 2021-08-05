@@ -1,0 +1,34 @@
+<div class="thumbnails">
+  <div class="group">
+    <ng-container *ngFor="let template of scrollTemplates()">
+      <a
+        href="#/"
+        title="{{ template.id }}"
+        class="{{ setActive(template.id) }}"
+        (click)="updateTemplate(template.id)"
+      >
+        <img
+          src="{{ baseURL + 'assets/images/thumbnails/' + template.thumbnail }}"
+          alt="7111-m"
+          width="145"
+          height="121"
+        />
+        <span>{{ template.id }}</span>
+      </a>
+    </ng-container>
+
+    <span
+      class="{{ 'previous ' + disablePrev() }}"
+      (click)="movePrev()"
+      title="Previous"
+      >Previous</span
+    >
+    <a
+      href="#/"
+      class="{{ 'next ' + disableNext() }}"
+      (click)="moveNext()"
+      title="Next"
+      >Next</a
+    >
+  </div>
+</div>
